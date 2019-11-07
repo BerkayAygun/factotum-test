@@ -5,7 +5,7 @@ resource "openstack_compute_instance_v2" "qa-po-a-test" {
 	image_id = "9da95274-3b23-49b0-a341-fd72b5afd3a7"
 	flavor_id = "3108"
 	key_pair = "pcmm-production"
-	security_groups = ["openstack_subnets"]
+	security_groups = ["default"]
 
 	lifecycle {
 		ignore_changes = ["user_data"]
