@@ -1,2 +1,0 @@
-echo ${user_id}
-echo ${ssh_key}
