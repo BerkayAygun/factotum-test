@@ -1,0 +1,7 @@
+resource "openstack_networking_port_v2" "pr-ibnctrl-ho-a-004_port" {
+	count = "1"
+	name = "pr-ibnctrl-ho-a-004"
+	network_id = "89093c7c-a78d-49b4-8daa-331f4a6f8398"
+	admin_state_up = "true"
+}
+
