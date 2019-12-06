@@ -1,0 +1,5 @@
+- name: Test Ansible Operation
+  shell: echo "Ansible Succeeded" >> /ansible-test
+  args:
+    chdir: "/"
+

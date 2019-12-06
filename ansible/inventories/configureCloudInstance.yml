@@ -1,0 +1,80 @@
+---
+
+# ansible-playbook -i hosts configureCloudInstance.yml  -vvv
+
+- hosts:  "{{ hostGrp | default('all') }}"
+#- hosts:  "{{ hostGrp }}"
+  remote_user: centos
+  become: true
+  become_method: sudo
+  become_user: root
+#- hosts: web
+#  remote_user: pcmmng
+  roles:
+    - role: cpsshkey
+      vars:
+      tags: [cpsshkey]
+    - role: common
+      vars:
+      tags: [common]
+    - role: java
+      vars:
+      tags: [ java ]
+    - role: mongodb
+      vars:
+      tags: [ mongodb ]
+    - role: setupemailclient
+      vars:
+      tags: [ email ]
+    - role: tools
+      vars:
+      tags: [ tools ]
+    - role: mw
+      vars:
+      tags: [ mw ]
+    - role: dash
+      vars:
+      tags: [ dash ]
+    - role: coll
+      vars:
+      tags: [ coll ]
+    - role: mon
+      vars:
+      tags: [ mon ]
+    - role: cass
+      vars:
+      tags: [ cass ]
+    - role: rx
+      vars:
+      tags: [ rx ]
+    - role: pqos
+      vars:
+      tags: [ pqos ]
+    - role: pcmm
+      vars:
+      tags: [ pcmm ]
+    - role: ssa
+      vars:
+      tags: [ ssa ]
+    - role: cfgagent
+      vars:
+      tags: [ cfgagent ]
+    - role: fetchrel
+      vars:
+      tags: [ fetchrel ]
+    - role: cleancfg
+      vars:
+      tags: [ cleancfg ]
+
+#    - { role: cass, when: ("'pqosservers' in group_names") or ("'pcmmservers' in group_names") }
+#    - { role: rx, when: "'rxservers' in group_names" }
+#    - { role: pqos, when: "'pqosservers' in group_names" }
+#    - { role: pcmm, when: "'pcmmservers' in group_names" }
+#    - { role: cfgagent, when: "'cfgagents' in group_names" }
+
+  environment:
+     JAVA_HOME: /opt/jdk
+  vars_files:
+    - group_vars/java
+    - group_vars/pcmm_pass
+    - group_vars/cass

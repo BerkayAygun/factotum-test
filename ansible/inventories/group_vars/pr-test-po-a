@@ -1,0 +1,11 @@
+---
+# JAVA related
+
+java_home: /opt/jdk
+jdk_dir: jdk1.8.0_201
+#jdk_file: jdk-8u112-linux-x64.tar.gz
+jdk_file: jdk-8u201-linux-x64.tar.gz
+jdk_download_url: http://download.oracle.com/otn-pub/java/jdk/8u112-b15/{{ jdk_file }}
+jdk_download_path: /opt/pcmm-ng/PCMM_Ansible/files
+jdk_install_path: /opt
+

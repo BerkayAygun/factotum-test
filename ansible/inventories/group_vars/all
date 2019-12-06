@@ -1,0 +1,23 @@
+---
+
+pcmm_rpm_file: pcmmserver-5.0.12-1.noarch.rpm
+rx_rpm_file: rxlite-5.0.9.rpm
+pqos_rpm_file: pqoslite-5.0.9.rpm
+cfgagent_rpm_file: cfgagent-4.0.4-1.noarch.rpm
+
+pcmm_process_string: pcmmserver
+rx_process_string: rxlite
+pqos_process_string: pqoslite
+cfgagent_process_string: cfgagent
+
+pcmmng_home: /opt/pcmm-ng
+jenkins_build_path: /home/jenkins/builds/5.0
+jenkins_build_path_cfgagent: /home/jenkins/builds/4.0
+rpm_path: "{{pcmmng_home}}/pr-hoc-jenkins-01{{jenkins_build_path}}"
+rpm_path_cfgagent: "{{pcmmng_home}}/pr-hoc-jenkins-01{{jenkins_build_path_cfgagent}}"
+files_path: /opt/pcmm-ng/PCMM_Ansible/files
+
+#log_fw_server: 172.28.92.213
+log_fw_server: 96.118.219.37
+log_fw_server_port: 24514
+
